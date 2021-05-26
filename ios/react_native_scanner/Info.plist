@@ -51,5 +51,18 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+
+	<key>NSCameraUsageDescription</key>
+	<string>The camera is accessed for the first time</string>
+
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>The photo library is accessed for the first time</string>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The photo library is accessed for the first time</string>
+
+	<!-- Include this only if you are planning to use the microphone for video recording -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>The microphone is accessed for the first time</string>
 </dict>
 </plist>
