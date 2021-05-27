@@ -39,11 +39,8 @@ function App() {
 
       <View style={styles.cameraControl}>
         <TouchableOpacity style={styles.btn} onPress={() => setBarcode(null)}>
-          <Text style={styles.btnText}>QR Scanning</Text>
+          <Text style={styles.btnText}>New QR Scan</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.btnText}>Text Recognition</Text>
-        </TouchableOpacity> 
       </View>
     </View>
   );
@@ -104,7 +101,7 @@ const styles = StyleSheet.create({
     color: '#62d1bc'
   },
   cameraControl: {
-    height: 200,
+    height: 180,
     justifyContent: 'center',
     alignItems: 'center',
   }
