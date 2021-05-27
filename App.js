@@ -10,38 +10,7 @@ import { RNCamera } from 'react-native-camera';
 
 function App() {
   const camera = useRef();
-  const [barcode, setBarcode] = useState();
-
-  const renderBarcode = ({ bounds, data }) => {
-    console.log(data)
-    console.log('------====', bounds)
-    return (
-    <View style={{ width: 300, height: 300 }}>
-      <View
-        style={{
-          borderWidth: 2,
-          borderRadius: 10,
-          position: 'absolute',
-          borderColor: '#F00',
-          justifyContent: 'center',
-          backgroundColor: '#FF0000',
-          padding: 10,
-          ...bounds.size,
-          left: bounds.origin.x,
-          top: bounds.origin.y,
-        }}
-      >
-        <Text style={{
-          color: '#F00',
-          flex: 1,
-          position: 'absolute',
-          textAlign: 'center',
-          backgroundColor: '#FF0000',
-        }}>{data}</Text>
-      </View>
-    </View>
-  )
-      };
+  const [barcode, setBarcode] = useState(null);
 
   return (
     <View style={styles.screen}>
@@ -50,18 +19,26 @@ function App() {
           <Text style={styles.topBarTitleText}>React Native Scanner</Text>
         </View>
       </SafeAreaView>
+
       <View style={styles.caption}>
         <Text style={styles.captionTitleText}>Welcome To React-Native-Camera Tutorial</Text>
       </View>
-      <RNCamera
-        ref={camera}
-        style={styles.rnCamera}
-        onBarCodeRead={setBarcode}
-      >
-        {barcode && renderBarcode(barcode)}
-      </RNCamera>
+
+      {barcode ? (
+        <View style={[styles.rnCamera, styles.rmCameraResult]}>
+          <Text style={styles.rmCameraResultText}>{barcode.data}</Text>
+          <Text style={styles.rmCameraResultText}>{barcode.type}</Text>
+        </View>
+      ) : (
+        <RNCamera
+          ref={camera}
+          style={styles.rnCamera}
+          onBarCodeRead={setBarcode}
+        />
+      )}
+
       <View style={styles.cameraControl}>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} onPress={() => setBarcode(null)}>
           <Text style={styles.btnText}>QR Scanning</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn}>
@@ -86,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   topBarTitleText: {
-    color: 'white',
+    color: '#ffffff',
     fontSize: 20,
   },
   caption: {
@@ -95,8 +72,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   captionTitleText: {
+    color: '#121B0D',
     fontSize: 16,
-    fontWeight: '700'
+    fontWeight: '600'
   },
   btn: {
     width: 240,
@@ -113,7 +91,17 @@ const styles = StyleSheet.create({
   },
   rnCamera: {
     flex: 1,
-    width: '100%',
+    width: '94%',
+    alignSelf: 'center',
+  },
+  rmCameraResult: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#eeeeee',
+  },
+  rmCameraResultText: {
+    fontSize: 20,
+    color: '#62d1bc'
   },
   cameraControl: {
     height: 200,
