@@ -41,6 +41,7 @@ function App() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: '#F2F2FC',
   },
   saveArea: {
     backgroundColor: '#62d1bc',
