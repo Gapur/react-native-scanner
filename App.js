@@ -1,15 +1,8 @@
-import React, { useRef, useState } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  SafeAreaView
-} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 
 function App() {
-  const camera = useRef();
   const [barcode, setBarcode] = useState(null);
 
   return (
@@ -31,7 +24,6 @@ function App() {
         </View>
       ) : (
         <RNCamera
-          ref={camera}
           style={styles.rnCamera}
           onBarCodeRead={setBarcode}
         />
