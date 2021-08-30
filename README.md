@@ -1,8 +1,6 @@
-<h1 align="center">
+<p align="center">
   <img src="https://github.com/Gapur/react-native-scanner/blob/main/assets/intro-react-native-camera.jpg" />
-  <br/>
-  React Native Scanner
-</h1>
+</p>
 
 # React Native Scanner
 
@@ -14,7 +12,7 @@ In this article, I will demonstrate React Native Camera by developing a QR code 
 
 ## What is React Native Camera?
 
-React Native Camera is a comprehensive camera component in React Native. It gives you control of the camera and communicates with the native OS and device hardware.
+[React Native Camera](https://github.com/react-native-camera/react-native-camera) is a comprehensive camera component in React Native. It gives you control of the camera and communicates with the native OS and device hardware.
 
 React Native Camera supports the following:
 
@@ -24,14 +22,14 @@ React Native Camera supports the following:
 - Barcode scanning
 - Text recognition
 
-It’s a completely open-source project, and pull requests are always welcome. It also comes with great documentation.
+It’s a completely open-source project, and pull requests are always welcome. It also comes with great [documentation](https://react-native-camera.github.io/react-native-camera/).
 
 You can install expo-camera by running the following command:
 ```sh
 expo install expo-camera
 ```
 
-It also works with face detection, barcode scanning, and taking pictures. You just need to import Camera from expo-camera:
+It also works with face detection, barcode scanning, and taking pictures. You just need to import Camera from [expo-camera](https://docs.expo.dev/versions/v41.0.0/sdk/camera/):
 ```sh
 import { Camera } from 'expo-camera';
 ```
@@ -40,7 +38,7 @@ import { Camera } from 'expo-camera';
 
 Now, to understand React Native Camera properly, let’s create a simple React Native project with a QR scanner. I’m going to use an iOS device to build and test.
 
-# Setting up the project
+### Setting up the project
 
 Before we get started, I need to create a new React Native project with the following lines of code:
 ```sh
@@ -97,7 +95,7 @@ android {
 
 After that, if we run the app and everything is fine, then we are ready to code!
 
-# Styling the app
+### Styling the app
 
 Let’s change our App.js file by adding the following imports:
 ```js
@@ -106,7 +104,7 @@ import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-na
 import { RNCamera } from 'react-native-camera'
 ```
 
-We will import and use the RNCamera component to communicate with the camera. If you are interested, you can read more about RNCamera here.
+We will import and use the RNCamera component to communicate with the camera. If you are interested, you can read more [about RNCamera here](https://react-native-camera.github.io/react-native-camera/docs/rncamera).
 
 Next, we will modify our main screen. Let’s remove the previously generated code in order to add a topBar with SafeAreaView and a title with View and Text.
 
@@ -181,7 +179,7 @@ const styles = StyleSheet.create({
 })
 ```
 
-If you want to check out all styling options, you can check out the stylesheet on GitHub here.
+If you want to check out all styling options, you can check out the stylesheet on [GitHub here](https://github.com/Gapur/react-native-scanner/blob/e05e215c6d9ad1295b0117fe52af134840df214b/App.js#L41).
 
 Now, if you run the app, our UI will look like the photo below:
 
@@ -190,9 +188,9 @@ Now, if you run the app, our UI will look like the photo below:
 </p>
 
 
-## Scanning a QR code
+### Scanning a QR code
 
-If you try to scan a QR code, you will not be able to read it yet. Therefore I will use the onBarCodeRead method to retrieve barcode information when the camera detects a QR code.
+If you try to scan a QR code, you will not be able to read it yet. Therefore I will use the [onBarCodeRead](https://react-native-camera.github.io/react-native-camera/docs/rncamera#onbarcoderead) method to retrieve barcode information when the camera detects a QR code.
 
 This function returns several properties, including:
 - data, a text presentation of QR code
