@@ -185,6 +185,10 @@ If you want to check out all styling options, you can check out the stylesheet o
 
 Now, if you run the app, our UI will look like the photo below:
 
+<p>
+  <img width="800"src="https://github.com/Gapur/react-native-scanner/blob/main/assets/react-native-scanner-UI.png">
+</p>
+
 
 ## Scanning a QR code
 
@@ -197,6 +201,9 @@ This function returns several properties, including:
 - type, the type of QR code (qr, aztec, code93, etc.)
 - bounds, the image size and origin data (x and y)
 
+<p>
+  <img width="800"src="https://github.com/Gapur/react-native-scanner/blob/main/assets/react-native-scanner-barcode.png">
+</p>
 
 Let’s update our App.js file to display information read from the QR code:
 ```js
@@ -243,8 +250,24 @@ Then, we have displayed the barcode data and type, if the barcode is not null. I
 
 And that’s it! This is the final app:
 
+<p>
+  <img width="800"src="https://github.com/Gapur/react-native-scanner/blob/main/assets/react-native-scanner-final.png">
+</p>
+
 ## Conclusion
 
 React Native Camera is an incredible package to help developers use the device camera for iOS and Android apps built with React Native. Besides our example QR code scanner, you can also do text recognition, face detection, and capture video and images.
 
 Thanks for reading. I hope you found this piece useful. Happy coding!
+
+## Article on LogRocket
+
+[Intro to React Native Camera](https://blog.logrocket.com/intro-to-react-native-camera/)
+
+## How to contribute?
+
+1. Fork this repo
+2. Clone your fork
+3. Code 🤓
+4. Test your changes
+5. Submit a PR!
